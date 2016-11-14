@@ -1,0 +1,23 @@
+version: '2'
+services:
+
+  # Instance MongoDB Wildfly
+  db_mongodb:
+    extends:
+      file: ../common/docker-compose.yml
+      service: mongo
+    container_name: "emp_mongodb_wildfly"
+
+  # wildfly 10
+  web_wildfly:
+    image: jboss/wildfly:10.0.0.Final
+    ports:
+      - "8080:8080"
+    container_name: "emp_wildfly"
+    environment:
+      - MONGO_HOST=db_mongodb
+      - MONGO_PORT=27017
+    volumes:
+      - ~/wildfly/deployment/:/opt/jboss/wildfly/standalone/deployments/:rw
+    depends_on:
+      - db_mongodb

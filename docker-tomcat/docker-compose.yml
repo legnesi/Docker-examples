@@ -1,0 +1,25 @@
+version: '2'
+services:
+
+  # Tomcat8
+  web_apache_tomcat8:
+    build: .
+    ports:
+      - "8080:8080"
+    container_name: "emp_web_apache_tomcat8"
+    environment:
+      - MONGO_HOST=db_mongodb
+      - MONGO_PORT=27017
+    volumes:
+      - ~/tomcat/webapps/:/usr/local/tomcat/webapps/:rw
+    depends_on:
+      - db_mongodb
+
+
+  # Instance MongoDB tomcat
+  db_mongodb:
+    extends:
+      file: ../common/docker-compose.yml
+      service: mongo
+    container_name: "emp_mongodb_tomcat"
+

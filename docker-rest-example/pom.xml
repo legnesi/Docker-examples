@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.smc.jee.example</groupId>
+	<artifactId>docker-rest-example</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1</version>
+	<name>docker::rest::example</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<!-- MORPHIA -->
+		<dependency>
+			<groupId>org.mongodb.morphia</groupId>
+			<artifactId>morphia</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<!-- JACKSON PROVIDER -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jackson-provider</artifactId>
+			<version>3.1.0.CR2</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JAVA EE 7 DEPENDENCY -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- TESTS -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>tomcat</id>
+			<activation>
+				<!-- <activeByDefault>true</activeByDefault> -->
+			</activation>
+			<dependencies>
+				<!-- CDI IMPLEMENNTATION -->
+				<dependency>
+					<groupId>org.jboss.weld.servlet</groupId>
+					<artifactId>weld-servlet</artifactId>
+					<version>2.4.0.Final</version>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.resteasy</groupId>
+					<artifactId>resteasy-cdi</artifactId>
+					<version>3.1.0.CR2</version>
+				</dependency>
+				<!--JAX-RS -->
+				<dependency>
+					<groupId>org.jboss.resteasy</groupId>
+					<artifactId>resteasy-jaxrs</artifactId>
+					<version>3.1.0.CR2</version>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.resteasy</groupId>
+					<artifactId>resteasy-jackson-provider</artifactId>
+					<version>3.1.0.CR2</version>
+				</dependency>
+			</dependencies>
+		</profile>
+
+		<profile>
+			<id>wildfly</id>
+		</profile>
+	</profiles>
+
+	<build>
+		<finalName>docker-rest-example</finalName>
+	</build>
+</project>

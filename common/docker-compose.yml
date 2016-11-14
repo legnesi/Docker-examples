@@ -1,0 +1,13 @@
+version: '2'
+services:
+
+  # Mongo Db Instance
+  mongo:
+    image: mongo:3.3.6
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+#    container_name: "emp_mongodb"
+    volumes:
+      - ~/mongo_store/db/data:/data/db:rw
+
