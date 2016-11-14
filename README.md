@@ -10,6 +10,7 @@ The example expose a restful service, (deployed in a tomcat or wildfly container
 	docker
 	docker-compose
 	Maven
+	create a folder ~/mongo_store/db to store mongodb datas (normally docker will create this for you)
 
 
 ### How to use ###
@@ -31,3 +32,5 @@ If you prefer tomcat, follow these steps:
 	- In the directory docker-rest-example/, run: mvn package -P wildfly (this will create the war archive)
 	- In the directory docker-wildfly/, run docker-compose up (or docker-compose up -d in daemond mode); this will start a container with wildfly and mongodb.
 	- Try the rests services.
+### NB ###
+You can set your own path for the directories created for tomcat, mongodb or wildfly.
