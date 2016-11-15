@@ -1,0 +1,33 @@
+version: '2'
+services:
+
+
+  # Basic LED
+  led:
+    image: bwnyasse/led:0.7.0
+    container_name: led
+    ports:
+      - 24224:24224
+      - 8084:8080
+    environment:
+      - APP_NAME=Xmen
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+
+  # wildfly 10
+  web_wildfly:
+    image: jboss/wildfly:10.0.0.Final
+    ports:
+      - "8080:8080"
+    container_name: "emp_wildfly"
+    logging:
+      driver: fluentd
+      options:
+        tag: "wildfly.docker.{{.Name }}"
+        fluentd-address: localhost:24224
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    depends_on:
+      - led
