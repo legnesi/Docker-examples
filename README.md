@@ -15,7 +15,7 @@ The example expose a restful service, (deployed in a tomcat or wildfly container
 
 ### How to use ###
 
-These has been test on Linux distribution (Ubuntu 16 LTS)
+These has been tested on a Linux distribution (Ubuntu 16 LTS)
 ### Tomcat users ###
 	If you prefer tomcat, follow these steps:
 
