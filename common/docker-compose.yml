@@ -9,5 +9,4 @@ services:
       - "28017:28017"
 #    container_name: "emp_mongodb"
     volumes:
-      - ~/mongo_store/db/data:/data/db:rw
-
+      - $MOGO_DB_DATA:/data/db:rw

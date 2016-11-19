@@ -18,6 +18,6 @@ services:
       - MONGO_HOST=db_mongodb
       - MONGO_PORT=27017
     volumes:
-      - ~/wildfly/deployment/:/opt/jboss/wildfly/standalone/deployments/:rw
+      - $WILDFLY_DEPLOYMENT_DIR:/opt/jboss/wildfly/standalone/deployments/:rw
     depends_on:
       - db_mongodb
