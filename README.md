@@ -19,7 +19,7 @@ These has been tested on a Linux distribution (Ubuntu 16 LTS)
 ### Tomcat users ###
 	If you prefer tomcat, follow these steps:
 
-	- Create a folder at ~/tomcat/webapps (by default docker will create it if it do not exist)
+	- Modifiy the file /docker-tomcat/.env and set the value of the environment variables TOMCAT_DEPLOYMENT_DIR and MOGO_DB_DATA
 	- In the directory docker-rest-example/, run: mvn package -P tomcat (this will create the war archive)
 	- In the directory docker-tomcat/, run docker-compose up (or docker-compose up -d in daemond mode); this will start a container with tomcat and mongodb. NB: tomcat will start in debug mode on port 8000.
 	- Try the rests services.
@@ -28,7 +28,7 @@ These has been tested on a Linux distribution (Ubuntu 16 LTS)
 
 If you prefer tomcat, follow these steps:
 
-	- Create a folder at ~/wildfly/deployment (by default docker will create it if it do not exist)
+	- Modifiy the file /docker-wildfly/.env and set the value of the environment variables WILDFLY_DEPLOYMENT_DIR and MOGO_DB_DATA
 	- In the directory docker-rest-example/, run: mvn package -P wildfly (this will create the war archive)
 	- In the directory docker-wildfly/, run docker-compose up (or docker-compose up -d in daemond mode); this will start a container with wildfly and mongodb.
 	- Try the rests services.
