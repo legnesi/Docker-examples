@@ -40,11 +40,9 @@ Lease back API REST
 
 Ce projet contient toutes les routes http exposées par le module lease back. Il est aussi le seul point d'accès en écriture (Create/Update) dans l'évenstore depuis le front lease.
 
-### Environnement technique ###
-Kotlin
-SparkJava 
-EventStore
-Docker
+### Comment le démarrer ###
+
+Aller à [demarrer leasev2 back](https://github.com/viareport/platform#lancement-des-applications-)
 
 
 Ci dessous un récapitulatif des routes http exposées:
@@ -53,5 +51,5 @@ Ci dessous un récapitulatif des routes http exposées:
     * Méthode Http: **POST**
     * Path: **/contrats**
     * Paramètres: le contrat à créér (body de la requête)
-    * Rerourne: La version du nouveau contrat créé.
+    * Retourne: La version du nouveau contrat créé.
 
