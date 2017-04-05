@@ -34,3 +34,27 @@ If you prefer tomcat, follow these steps:
 	- Try the rests services.
 ### NB ###
 You can set your own path for the directories created for tomcat, mongodb or wildfly.
+
+Lease back API REST
+====================
+
+Ce projet contient toutes les routes http exposées par le module lease back. Il est aussi le seul point d'accès en écriture (Create/Update) dans l'évenstore depuis le front lease.
+
+### Environnement technique ###
+
+Kotlin
+SparkJava 
+EventStore
+Docker
+
+
+Ci dessous un récapitulatif des routes http exposées:
+
+* **Création d'un contrat**
+```
+* Méthode Http: **POST**
+* Path: /contrats
+* Paramètres: le contrat à créér (body de la requête)
+* Méthode Http: POST
+```
+
