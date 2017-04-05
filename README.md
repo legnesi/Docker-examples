@@ -53,10 +53,7 @@ Ci dessous un récapitulatif des routes http exposées:
 * Création d'un contrat
 
     * Méthode Http: **POST**
-    * Path: /contrats
+    * Path: **/contrats**
     * Paramètres: le contrat à créér (body de la requête)
-    * Méthode Http: POST
-* Pommes
-* Poires
-    * Sous élément avec au moins quatre espaces devant.
+    * Rerourne: La version du nouveau contrat créé.
 
