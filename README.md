@@ -50,8 +50,7 @@ Docker
 
 Ci dessous un récapitulatif des routes http exposées:
 
-* Création d'un contrat
-
+* ##### Création d'un contrat #####
     * Méthode Http: **POST**
     * Path: **/contrats**
     * Paramètres: le contrat à créér (body de la requête)
