@@ -41,7 +41,6 @@ Lease back API REST
 Ce projet contient toutes les routes http exposées par le module lease back. Il est aussi le seul point d'accès en écriture (Create/Update) dans l'évenstore depuis le front lease.
 
 ### Environnement technique ###
-
 Kotlin
 SparkJava 
 EventStore
